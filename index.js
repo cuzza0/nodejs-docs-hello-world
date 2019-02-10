@@ -29,7 +29,6 @@ function _validateEnvironmentVariables() {
     }
   }
   
-  
 
 var server = http.createServer(function(request, response) {
 
@@ -56,7 +55,15 @@ var server = http.createServer(function(request, response) {
               } else {
                 console.log(util.format('\n######End of Task5: List all the vms under the current ' + 
                   'subscription is successful.\n%s', util.inspect(result, { depth: null })));
-                response.end(result[0].name);
+                var vmOutput = "";
+                //result.foreach(vmItem => {
+                  //vmOutput += "vm " + vmItem.name + ", " + vmItem.location + ", " + vmItem.tags.shutdown;
+                //})
+                for (var vm = 0; vm < result.length; vm++) {
+                  vmOutput += "vm " + result[vm].name + ", " + result[vm].location + ", " + result[vm].tags.shutdown;
+                };
+                //var vmOutput = [result[0].name, result[0].type, result[0].location, result[0].tags.shutdown]
+                response.end(vmOutput);
                 callback(null, result);
               }
             });
