@@ -5,6 +5,11 @@
     "private": true,
     "license": "MIT",
     "author": "Microsoft",
+    "dependencies": {
+        "azure-arm-compute": "^0.18.1",
+        "ms-rest-azure": "^1.14.3",
+        "async": "0.2.7"
+    },
     "scripts": {
         "start": "node index.js"
     }
