@@ -5,6 +5,10 @@
     "private": true,
     "license": "MIT",
     "author": "Microsoft",
+    "engine": {
+        "node": ">=8.9.3",
+        "npm": ">=5.5.1"
+    },
     "dependencies": {
         "azure-arm-compute": "^0.18.1",
         "ms-rest-azure": "^1.14.3",
